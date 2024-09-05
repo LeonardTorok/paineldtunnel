@@ -54,11 +54,11 @@ sudo apt-get install npm -y
 sudo apt-get install cron -y
 sudo apt-get install screen -y
 sudo apt-get install git -y
-curl -s -L https://raw.githubusercontent.com/LeonardTorok/painel-app3
+curl -s -L https://raw.githubusercontent.com/LeonardTorok/paineldtunnel
 /main/setup_20.x | bash
 apt-get install -y nodejs -y
 #=========================
-git clone https://github.com/LeonardTorok/painel-app3.git
+git clone https://github.com/LeonardTorok/paineldtunnel.git
 cd /root/paineldtunnel 
 chmod 777 pon poff menudt backmod
 mv pon poff menudt backmod /bin
