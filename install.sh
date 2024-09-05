@@ -58,7 +58,7 @@ curl -s -L https://raw.githubusercontent.com/LeonardTorok/painel-app3
 /main/setup_20.x | bash
 apt-get install -y nodejs -y
 #=========================
-git clone https://github.com/PhoenixxZ2023/paineldtunnel.git
+git clone https://github.com/LeonardTorok/painel-app3.git
 cd /root/paineldtunnel 
 chmod 777 pon poff menudt backmod
 mv pon poff menudt backmod /bin
