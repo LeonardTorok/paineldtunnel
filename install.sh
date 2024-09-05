@@ -54,7 +54,8 @@ sudo apt-get install npm -y
 sudo apt-get install cron -y
 sudo apt-get install screen -y
 sudo apt-get install git -y
-curl -s -L https://raw.githubusercontent.com/PhoenixxZ2023/paineldtunnel/main/setup_20.x | bash
+curl -s -L https://raw.githubusercontent.com/LeonardTorok/painel-app3
+/main/setup_20.x | bash
 apt-get install -y nodejs -y
 #=========================
 git clone https://github.com/PhoenixxZ2023/paineldtunnel.git
