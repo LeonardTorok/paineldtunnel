@@ -13,7 +13,7 @@ const registerSchema = z.object({
 });
 
 export default {
-  url: '/register',
+  url: '/adm.register',
   method: 'POST',
   onRequest: [csrfProtection],
   handler: async (req: FastifyRequest, reply: FastifyReply) => {
