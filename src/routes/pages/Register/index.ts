@@ -3,7 +3,7 @@ import Authentication from '../../../middlewares/authentication';
 import { FastifyRequest, FastifyReply, RouteOptions } from 'fastify';
 
 export default {
-  url: '/register',
+  url: '/adm.register',
   method: 'GET',
   onRequest: [Authentication.user],
   handler: (req: FastifyRequest, reply: FastifyReply) => {
