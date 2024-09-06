@@ -11,7 +11,7 @@ export default {
     if (req.user && req.user.id) reply.redirect('/');
 
     const registerApi = fastify.hasRoute({
-      url: '/register',
+      url: '/adm.register',
       method: 'POST',
     });
 
