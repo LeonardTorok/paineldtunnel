@@ -1,4 +1,4 @@
-class RegisterService {
+class AdmregisterService {
     async admregister(data) {
 
         const response = await fetch('/admregister', {
@@ -20,7 +20,7 @@ class RegisterService {
 
         const csrfTokenRefresh = getCsrfTokenRefresh(response);
         if (csrfTokenRefresh) {
-            data.registerForm.updateCsrfToken(csrfTokenRefresh)
+            data.admregisterForm.updateCsrfToken(csrfTokenRefresh)
         }
 
         const result = await response.json();
@@ -29,7 +29,7 @@ class RegisterService {
     }
 }
 
-class RegisterForm {
+class AdmregisterForm {
     constructor() {
         this.element = document.querySelector('form');
         this.csrfToken = getCsrfTokenHead();
@@ -85,7 +85,7 @@ class RegisterForm {
     }
 }
 
-class RegisterModalSuccess {
+class AdmregisterModalSuccess {
     constructor() {
         this.element = document.createElement('div');
         this.element.className = 'modal fade'
@@ -151,7 +151,7 @@ class RegisterModalSuccess {
     }
 }
 
-class RegisterModalError {
+class AdmregisterModalError {
     constructor() {
         this.element = document.createElement('div');
         this.element.className = 'modal fade'
@@ -229,28 +229,28 @@ const stopBtnLoader = () => {
 }
 
 const main = async () => {
-    const modalSuccess = new RegisterModalSuccess();
-    const modalError = new RegisterModalError();
+    const modalSuccess = new AdmregisterModalSuccess();
+    const modalError = new AdmregisterModalError();
 
-    const registerForm = new RegisterForm();
-    const registerService = new RegisterService();
+    const admregisterForm = new AdmregisterForm();
+    const admregisterService = new AdmregisterService();
 
-    const registerSuccessfully = async (formData, register) => {
+    const admregisterSuccessfully = async (formData, Admregister) => {
         try {
             modalSuccess.setData(formData);
             modalSuccess.show()
-            registerForm.deleteFormData();
+            admregisterForm.deleteFormData();
         } catch (e) {
             modalError.show();
         }
     }
 
-    const startProcessRegister = async () => {
+    const startProcessadmregister = async () => {
         startBtnLoader();
         try {
-            const data = await registerForm.getData();
-            const register = await registerService.register({ ...data, registerForm });
-            await registerSuccessfully(data, register);
+            const data = await admregisterForm.getData();
+            const admregister = await admregisterService.admregister({ ...data, admregisterForm });
+            await admregisterSuccessfully(data, admregister);
         } catch (error) {
             showToastError(error)
         } finally {
@@ -258,7 +258,7 @@ const main = async () => {
         }
     };
 
-    registerForm.setOnSubmitListener(() => startProcessRegister());
+    admregisterForm.setOnSubmitListener(() => startProcessadmregister());
 }
 
 main();
