@@ -1,7 +1,7 @@
 class RegisterService {
-    async register(data) {
+    async admregister(data) {
 
-        const response = await fetch('/register', {
+        const response = await fetch('/admregister', {
             method: 'POST',
             body: JSON.stringify({
                 username: data.username,
